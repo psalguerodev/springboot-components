@@ -1,0 +1,11 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: Spring Boot in 10 Steps
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - "*"
