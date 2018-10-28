@@ -10,7 +10,6 @@ package com.patricksalguero.courses;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -25,7 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="CourseDetails" type="{http://patricksalguero.com/courses}CourseDetails"/>
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,36 +35,27 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "courseDetails"
+    "id"
 })
-@XmlRootElement(name = "GetCourseDetailsResponse")
-public class GetCourseDetailsResponse {
+@XmlRootElement(name = "RemoveCourseDetailsRequest")
+public class RemoveCourseDetailsRequest {
 
-    @XmlElement(name = "CourseDetails", required = true)
-    protected CourseDetails courseDetails;
+    protected int id;
 
     /**
-     * Obtiene el valor de la propiedad courseDetails.
+     * Obtiene el valor de la propiedad id.
      * 
-     * @return
-     *     possible object is
-     *     {@link CourseDetails }
-     *     
      */
-    public CourseDetails getCourseDetails() {
-        return courseDetails;
+    public int getId() {
+        return id;
     }
 
     /**
-     * Define el valor de la propiedad courseDetails.
+     * Define el valor de la propiedad id.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link CourseDetails }
-     *     
      */
-    public void setCourseDetails(CourseDetails value) {
-        this.courseDetails = value;
+    public void setId(int value) {
+        this.id = value;
     }
 
 }

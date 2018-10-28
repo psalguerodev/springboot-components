@@ -25,7 +25,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="CourseDetails" type="{http://patricksalguero.com/courses}CourseDetails"/>
+ *         &lt;element name="status" type="{http://patricksalguero.com/courses}STATUS"/>
+ *         &lt;element name="message" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,36 +37,63 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "courseDetails"
+    "status",
+    "message"
 })
-@XmlRootElement(name = "GetCourseDetailsResponse")
-public class GetCourseDetailsResponse {
+@XmlRootElement(name = "RemoveCourseDetailsResponse")
+public class RemoveCourseDetailsResponse {
 
-    @XmlElement(name = "CourseDetails", required = true)
-    protected CourseDetails courseDetails;
+    @XmlElement(required = true)
+    protected STATUS status;
+    @XmlElement(required = true)
+    protected String message;
 
     /**
-     * Obtiene el valor de la propiedad courseDetails.
+     * Obtiene el valor de la propiedad status.
      * 
      * @return
      *     possible object is
-     *     {@link CourseDetails }
+     *     {@link STATUS }
      *     
      */
-    public CourseDetails getCourseDetails() {
-        return courseDetails;
+    public STATUS getStatus() {
+        return status;
     }
 
     /**
-     * Define el valor de la propiedad courseDetails.
+     * Define el valor de la propiedad status.
      * 
      * @param value
      *     allowed object is
-     *     {@link CourseDetails }
+     *     {@link STATUS }
      *     
      */
-    public void setCourseDetails(CourseDetails value) {
-        this.courseDetails = value;
+    public void setStatus(STATUS value) {
+        this.status = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad message.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getMessage() {
+        return message;
+    }
+
+    /**
+     * Define el valor de la propiedad message.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setMessage(String value) {
+        this.message = value;
     }
 
 }

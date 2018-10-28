@@ -1,6 +1,7 @@
 package com.psalguero.soap.webservices.springbootsoapwebservices.soap.service;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
@@ -12,6 +13,10 @@ public class CourseDetailsService {
 
 	private static List<Course> courses = new ArrayList<Course>();
 
+	public enum Status {
+		SUCCESS, FAILURE
+	}
+	
 	static {
 		Course course1 = new Course(1, "Angular 7+", "Basic");
 		courses.add(course1);
@@ -34,14 +39,20 @@ public class CourseDetailsService {
 		return courses;
 	}
 
-	public int deleteById(int id) {
-		int course = 0;
-		for (Course c : courses) {
+	public Status deleteById(int id) {
+		Status course = Status.FAILURE;
+
+		Iterator<Course> iterator = courses.iterator();
+
+		while (iterator.hasNext()) {
+			Course c = iterator.next();
+
 			if (c.getId() == id) {
-				courses.remove(c);
-				course = 1;
+				iterator.remove();
+				course = Status.SUCCESS;
 			}
 		}
+
 		return course;
 	}
 }

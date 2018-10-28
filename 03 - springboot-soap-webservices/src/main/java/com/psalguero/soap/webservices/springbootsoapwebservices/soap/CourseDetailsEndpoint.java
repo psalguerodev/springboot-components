@@ -15,8 +15,13 @@ import com.patricksalguero.courses.GetAllCourseDetailsRequest;
 import com.patricksalguero.courses.GetAllCourseDetailsResponse;
 import com.patricksalguero.courses.GetCourseDetailsRequest;
 import com.patricksalguero.courses.GetCourseDetailsResponse;
+import com.patricksalguero.courses.RemoveCourseDetailsRequest;
+import com.patricksalguero.courses.RemoveCourseDetailsResponse;
+import com.patricksalguero.courses.STATUS;
 import com.psalguero.soap.webservices.springbootsoapwebservices.soap.bean.Course;
+import com.psalguero.soap.webservices.springbootsoapwebservices.soap.excetion.CourseNotFoundException;
 import com.psalguero.soap.webservices.springbootsoapwebservices.soap.service.CourseDetailsService;
+import com.psalguero.soap.webservices.springbootsoapwebservices.soap.service.CourseDetailsService.Status;
 
 @Endpoint
 public class CourseDetailsEndpoint {
@@ -38,6 +43,10 @@ public class CourseDetailsEndpoint {
 
 		Course course = service.findById(courseDetails.getId());
 
+		if(course == null) {
+			throw new CourseNotFoundException("Course not found by id " + courseDetails.getId());
+		}
+		
 		return mapCourseDetails(course);
 	}
 
@@ -50,6 +59,31 @@ public class CourseDetailsEndpoint {
 		List<Course> course = service.findAll();
 
 		return mapCourseDetails(course);
+	}
+	
+	@PayloadRoot(namespace = ROOT_NAMESPACE, localPart = "RemoveCourseDetailsRequest")
+	@ResponsePayload
+	public RemoveCourseDetailsResponse processRemoveCourseDetails(@RequestPayload RemoveCourseDetailsRequest request) {
+		Status course = service.deleteById(request.getId()) ;
+		RemoveCourseDetailsResponse response = new RemoveCourseDetailsResponse();
+		
+		if(course == Status.SUCCESS) {
+			response.setStatus(mapStatus(course));
+			response.setMessage("COURSE WITH ID " + request.getId() + " DELETE SUCCESSFULL!");
+		} else {
+			response.setStatus(mapStatus(course));
+			response.setMessage("NOT FOUND COURSE WITH ID "+ request.getId());
+		}
+		return response;
+	}
+
+	
+
+	private STATUS mapStatus(Status course) {
+		if(course == Status.SUCCESS) {
+			return STATUS.SUCCESS;
+		}
+		return STATUS.FAILURE;
 	}
 
 	private GetCourseDetailsResponse mapCourseDetails(Course course) {
