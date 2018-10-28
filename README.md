@@ -28,3 +28,9 @@ Ejemplos, configuraciones, Arquitecturas.
     - Exposicion del WSDL
     - Generacion de clases wsdl4j
     - Configuracion del POM wsdl4j plugin
+
+4. Sprinb boot Web Services REST
+	- Creacion del Controlador REST
+	- Exponiendo recursos BEANs
+	- Uso del Path variable
+	- UserDaoService Bean para utilizar datos estaticos
