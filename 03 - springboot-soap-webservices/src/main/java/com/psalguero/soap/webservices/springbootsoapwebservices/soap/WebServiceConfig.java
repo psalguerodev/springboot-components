@@ -12,8 +12,8 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.ws.config.annotation.EnableWs;
 import org.springframework.ws.config.annotation.WsConfigurerAdapter;
 import org.springframework.ws.server.EndpointInterceptor;
-import org.springframework.ws.soap.security.wss4j2.callback.SimplePasswordValidationCallbackHandler;
 import org.springframework.ws.soap.security.xwss.XwsSecurityInterceptor;
+import org.springframework.ws.soap.security.xwss.callback.SimplePasswordValidationCallbackHandler;
 import org.springframework.ws.transport.http.MessageDispatcherServlet;
 import org.springframework.ws.wsdl.wsdl11.DefaultWsdl11Definition;
 import org.springframework.xml.xsd.SimpleXsdSchema;
@@ -50,7 +50,7 @@ public class WebServiceConfig extends WsConfigurerAdapter{
 	@Bean
 	public XsdSchema courseSchema() {
 		return new SimpleXsdSchema(new ClassPathResource("course-details.xsd"));
-	}
+	}	
 	
 	//XwsSecurityInterceptor
 		@Bean
