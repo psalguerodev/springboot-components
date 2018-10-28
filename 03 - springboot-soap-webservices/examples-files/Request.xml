@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<GetCourseDetailsRequest xmlns="http://patricksalguero.com/courses">
+    <id>123</id>
+</GetCourseDetailsRequest>
