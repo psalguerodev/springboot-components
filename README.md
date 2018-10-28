@@ -10,7 +10,7 @@ Ejemplos, configuraciones, Arquitecturas.
 1. Spring en 5 Pasos 
     - Inyeccion de Dependencias
     - Inversion de Control
-    - Acoplamiento bajos
+    - Acoplamiento bajo
 
 2. Spring boot en 10 Pasos
     - Beans
@@ -20,3 +20,9 @@ Ejemplos, configuraciones, Arquitecturas.
     - Hal REST
 
 3. Srpring boot Web Services SOAP
+    - Creacion del XSD
+    - Creacion del Endpoint
+    - Plugin chrome wizdler
+    - Exposicion del WSDL
+    - Generacion de clases wsdl4j
+    - Configuracion del POM wsdl4j plugin
