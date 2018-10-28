@@ -1,4 +1,6 @@
-# Proyectos Spring Boot
+# Proyectos Spring Boot ![NPM version][logo]
+
+[logo]: https://img.shields.io/badge/spring%20boot-2.0.6-brightgreen.svg
 
 Proyectos realizados con Spring boot para comprender cada componente y estrucutura de Spring Boot
 Ejemplos, configuraciones, Arquitecturas.
