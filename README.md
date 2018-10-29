@@ -29,8 +29,13 @@ Ejemplos, configuraciones, Arquitecturas.
     - Generacion de clases wsdl4j
     - Configuracion del POM wsdl4j plugin
 
-4. Sprinb boot Web Services REST
+4. Spring boot Web Services REST
 	- Creacion del Controlador REST
 	- Exponiendo recursos BEANs
 	- Uso del Path variable
 	- UserDaoService Bean para utilizar datos estaticos
+	- Control de Excepciones de los controladores
+	- Crear una exception personalizado
+	- Respondiendo diferentes estatus HTTP segun corresponda
+        - Se agrega la internalizacion de mensajes segun header Accept-Language (us,fr)
+        - Validacion con Javax en los bean hasta el controller

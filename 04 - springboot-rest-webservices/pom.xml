@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>springboot-rest-webservices</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Project Spring boot </description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -33,7 +33,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-hateoas</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
