@@ -5,10 +5,15 @@ import java.util.Date;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+@ApiModel(description="Modelo de prueba de usuario - documentando con swagger2")
 public class User {
 	private Integer id;
 	
 	@Size(max=20, min=10, message="Name should have atleast 2 characters")
+	@ApiModelProperty(notes="Propiedad donde se describe el nombre del Usuario")
 	private String name;
 	
 	@Past
